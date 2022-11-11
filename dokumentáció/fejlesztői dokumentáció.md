@@ -1,5 +1,25 @@
-## A fontosabb modulok leírása
+# Arduino UNO vezérlésű digitális óra fejlesztői dokumentációja.
 
+## Specifikációk, követelmények:
+Arduino vagy Raspberry Pi alapú mikroelektronikai rendszer létrehozása.
+
+### Értékelési szempontok:
+- Elégtelen: nem felel meg a minimális kritériumoknak, akár tartalmilag vagy minőségben
+- Elégséges: viszonylag egyszerűbb a feladat, és készül hozzá fejlesztői dokumentáció és használati útmutató
+- Közepes: bonyolultabb a feladat, amely kiegészül még valamilyen mérő/adatgyűjtő rendszerrel (adatbázis) és egyaránt készül hozzá fejlesztői dokumentáció és használati útmutató
+- Jó: a közepes szint elvárásait még ki kell egészíteni valamilyen adatvizualizálási rendszerrel
+- Jeles: a jó osztályzat elvárásait még ki kell egészíteni valamilyen plusz kommunikációs csatornával. Ez lehet pl.: tweet, facebook post, email notification, push üzenet a telefonon, stb. (csak a képzelet szabhat határokat)
+
+## Tervezési fázis:
+Eleinte sokat gondolkozam, hogy mit is tudnék megvalósítani és nagyon nem jutott eszembe semmi. Rájöttem, hogy körül kell néznem a saját környezetemben, ahhoz, hogy legyen bármi elképzelésem arról, hogy mit is akarok megvalósítani. Itthon van egy digitális órám, ami ugyan ezen az elven működik. Bedugjuk a tápot, az óra kiírja az időt szép világosan, Ezzel csak az a baj, hogy ez az óra napokkal később már több mint nyolc perces sietéssel jár, illetve, hogy a kijelző fényereje nem állítható. Így esett a választásom erre a projektre, hiszen szeretnék egy használhatót a szobámba. Sikerült a szükséges modulokat is egy oldalról beszereznem ,így jöval megkönnyítve és lerövidítve a projekt menetét.
+
+## Futási környezet
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+## A fejlesztői környezet
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+## A fontosabb modulok leírása
 ### DS3231 RTC
 A modul egy valós idejű óra ( Real time clock vagy másképp RTC modul), amely képes kezelni órát, percet és másodpercet rendkívül nagy pontossággal. Ugyancsak képes kezelni a napokat hónapokat éveket. A pontosságért a DS3231 típusú chip felell, míg az adattárolásért AT24C32, amely 32kBit nagyságú.
 
