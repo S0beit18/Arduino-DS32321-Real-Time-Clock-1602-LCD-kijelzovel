@@ -51,4 +51,20 @@ Kék színű háttérvilágítással rendelkezik, az I2C kommunikációnak kösz
 - Terhelhetőség-200 mW
 - Forgatási szög (mechanikus)-300 °
 
+## Az algoritmusok és a kódok:
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 ## Kapcsolási rajz
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+## Fellépő hibák a tesztelés során:
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+## Működési vázlat, szimuláció online
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+## Fejlesztési lehetőségek:
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+## Képek és videók a kész robotkarról:
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
