@@ -52,8 +52,55 @@ Kék színű háttérvilágítással rendelkezik, az I2C kommunikációnak kösz
 - Forgatási szög (mechanikus)-300 °
 
 ## Az algoritmusok és a kódok:
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Demo kód:
+```
+    void setup()
+    {
+    Serial.begin(115200); // Setup Serial connection
+    rtc.begin();
+    //A követkető 3 sort kikommentálva lehet az időt beállítani.
+    //rtc.setDOW(MONDAY);       //Nap beállítása
+    //rtc.setTime(12, 0, 0);    //Idő beállítása 12:00:00 (24 órás formátum)
+    //rtc.setDate(11, 14, 2022)  //Dátum beállítása 2022.11.14
+    }
+          
+    void loop()
+    {
+    Serial.print(rtc.getDOWStr());    //Elküldi a hét napját
+    Serial.print(" ");
+    Serial.print(rtc.getDateStr());   //Elküldi a dátumot
+    Serial.print(" -- ");
+    Serial.println(rtc.getTimeStr()); //Elküldi az időt
+    delay (1000);                     //Vár 1 másodpercet az ismétlés előtt
+```
+Ha megnézzük a loop szekciót a mintakódban akkor látható hogy 3 különböző függvényt használok, hogy információt kapjunk az RTC modultól, majd ezeket az információkat írjuk ki a Serial Monitorra. A képen látható az illusztráció:
+KELL KÉP!!!!!!
 
+Mintakód:
+```
+    #include <DS3231.h> 
+    #include <Wire.h> 
+    #include <LiquidCrystal_I2C.h>                                   // LiquidCrystal_I2C könyvtár használata 
+    //(addr, EN,RW,RS,D4,D5,D6,D7,BL,BLpol) 
+    LiquidCrystal_I2C lcd(0x3F, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);   // LiquidCrystal_I2C könyvtárat használjukDS3231 rtc(SDA, SCL); 
+    void setup() { 
+    rtc.begin(); // 
+    lcd.begin(16,2); //// 2 soros 16 karakteres LCD meghatározása 
+    } 
+
+    void loop() { 
+    lcd.setCursor(0,0); 
+    lcd.print("Time: "); 
+    lcd.print(rtc.getTimeStr()); 
+    lcd.setCursor(0,1); 
+    lcd.print("Date: "); 
+    lcd.print(rtc.getDateStr()); 
+    delay(1000); 
+    } 
+```
+A második példában egy I2C kommunikációs két soros LCD kijelzőt fogok használni, hogy vizuálisan is megjelenítsem az időt és a dátumot. A alábbi kapcsolási rajzon is ez az ábra látható.
+
+          
 ## Kapcsolási rajz
 <details>
   <summary>Kapcsolási rajz</summary>
@@ -101,9 +148,13 @@ A harmadik példa, pedig azt mutatja be, hogy az RTC modul híján teljes az áb
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ## Fejlesztési lehetőségek:
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Mivel ez nem egy végleges verzió, így rengeteg tovább fejlesztési lehtőség rejlik ebben a projektben.
+Ezek közül pár:
+- Konnektorból, esetleg akkumulátorról való működtetés
+- Óra vázának kialakítása
+- Óra/dátum átállítása gombokkal
 
-## Képek és videók a kész óráról:
+## Képek és videók az óráról:
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ## Szerző:
