@@ -103,5 +103,5 @@ A harmadik példa, pedig azt mutatja be, hogy az RTC modul híján teljes az áb
 ## Fejlesztési lehetőségek:
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-## Képek és videók a kész robotkarról:
+## Képek és videók a kész óráról:
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
