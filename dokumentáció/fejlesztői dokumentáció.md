@@ -19,6 +19,15 @@ Eleinte sokat gondolkozam, hogy mit is tudnék megvalósítani és nagyon nem ju
 ## A fejlesztői környezet
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+## Felhasznált modulok
+- Arduino UNO REV3 fejlesztői panel
+- DS3231 + AT24C32 I2C RTC valós idejű memória modul
+- CR2032 Gombelem
+- KC-1602-BB-I2C LCD kijelző
+- POM1615 LIN 10K B potenciométer
+- HS-005 próbapanel
+- RC-40-10/FF v. RC-40-10/MF v. RC-40-10/MM jumper kábel
+
 ## A fontosabb modulok leírása
 ### DS3231 RTC
 A modul egy valós idejű óra ( Real time clock vagy másképp RTC modul), amely képes kezelni órát, percet és másodpercet rendkívül nagy pontossággal. Ugyancsak képes kezelni a napokat hónapokat éveket. A pontosságért a DS3231 típusú chip felell, míg az adattárolásért AT24C32, amely 32kBit nagyságú.
