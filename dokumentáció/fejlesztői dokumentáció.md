@@ -55,10 +55,30 @@ Kék színű háttérvilágítással rendelkezik, az I2C kommunikációnak kösz
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ## Kapcsolási rajz
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<details>
+  <summary>Kapcsolási rajz</summary>
+    <p>
+      <picture>
+        <img alt="Kapcsolási rajz" src="https://user-images.githubusercontent.com/117828931/201667191-d593dcd2-0a1c-4f0d-ab35-1dba5b52b161.png">
+      </picture>
+    </p>
+</details>
 
-## Fellépő hibák a tesztelés során:
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+## Fellépő hibák a tervezés, tesztelés során:
+A tervezés közben egy olyan -számomra- hibát találtam, ami mellett nem tudtam dönteni. Mivel ezelőtt nem tanultam semmi ilyesmit, ezért persze internetes oldalakon, próbáltam kapcsolási rajzot összerakni. Sikerült is, kisebb nagyobb sikerrel.
+
+Az első példa azt mutatja be, hogy itt a kapcsolási rajz teljesen kész állapotban van, viszont nem tudom lefuttatni szimuláció céljából.
+<details>
+  <summary>Kapcsolási rajz szimuláció nélkül</summary>
+    <p>
+      <picture>
+        <img alt="Kapcsolási rajz" src="https://user-images.githubusercontent.com/117828931/201672997-ee8c3753-b1f6-4421-ab91-1f7e56ebf1a3.png">
+      </picture>
+    </p>
+</details>
+
+A második példa pedig
+
 
 ## Működési vázlat, szimuláció online
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
