@@ -105,3 +105,10 @@ A harmadik példa, pedig azt mutatja be, hogy az RTC modul híján teljes az áb
 
 ## Képek és videók a kész óráról:
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+## Szerző:
+- Név: Játékos Ádám Csaba
+- Neptun-kód: DLHKIJ
+- Email: jatekadi@gmail.com
+- Tantárgy kódja: GKNB_INTM020
+- Neve: Mikroelektromechanikai rendszerek
