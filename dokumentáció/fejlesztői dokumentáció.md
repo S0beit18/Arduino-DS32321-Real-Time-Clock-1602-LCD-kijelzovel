@@ -20,13 +20,15 @@ Eleinte sokat gondolkozam, hogy mit is tudnék megvalósítani és nagyon nem ju
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ## Felhasznált modulok
-- Arduino UNO REV3 fejlesztői panel
-- DS3231 + AT24C32 I2C RTC valós idejű memória modul
-- CR2032 Gombelem
-- KC-1602-BB-I2C LCD kijelző
-- POM1615 LIN 10K B potenciométer
-- HS-005 próbapanel
-- RC-40-10/FF v. RC-40-10/MF v. RC-40-10/MM jumper kábel
+- [Arduino UNO REV3 fejlesztői panel](https://www.hestore.hu/prod_10035528.html)
+- [DS3231 + AT24C32 I2C RTC valós idejű memória modul](https://www.hestore.hu/prod_10038042.html)
+- [CR2032 Gombelem](https://www.hestore.hu/prod_10042619.html)
+- [KC-1602-BB-I2C LCD kijelző](https://www.hestore.hu/prod_10042987.html)
+- [POM1615 LIN 10K B potenciométer](https://www.hestore.hu/prod_10027737.html)
+- [HS-005 próbapanel](https://www.hestore.hu/prod_10043091.html)
+- [RC-40-10/FF jumper kábel](https://www.hestore.hu/prod_10036627.html)
+- [RC-40-10/MF jumper kábel](https://www.hestore.hu/prod_10036628.html)
+- [RC-40-10/MM jumper kábel](https://www.hestore.hu/prod_10036629.html)
 
 ## A fontosabb modulok leírása
 ### DS3231 RTC
