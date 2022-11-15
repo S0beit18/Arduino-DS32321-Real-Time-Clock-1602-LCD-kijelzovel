@@ -7,13 +7,14 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!
 
 ## Beüzemelés
-!!!!!!!!!!!!!!!!!!!!!!!!!
+A feljebb mellékelt kapcsoloódási ábra alapján illesszük össze a modulokat. Ha az Arduino UNO-n lévő "ON" lámpa világít, akkor helyesen áram alatt van a készülék.
 
 ## Használat
 !!!!!!!!!!!!!!!!!!!!!!!!!
 
 ## Fizikai hibák
-!!!!!!!!!!!!!!!!!!!!!!!!!
+- Készülék rosszul lett csatlakoztatva a számítógéphez.
+- 
 
 ## Képek és videók a kész óráról:
 !!!!!!!!!!!!!!!!!!!!!!!!!
