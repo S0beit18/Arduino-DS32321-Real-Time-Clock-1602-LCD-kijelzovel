@@ -78,25 +78,26 @@ KELL KÉP!!!!!!
 
 Mintakód:
 ```
-    #include <DS3231.h> 
-    #include <Wire.h> 
-    #include <LiquidCrystal_I2C.h>                                   // LiquidCrystal_I2C könyvtár használata 
-    //(addr, EN,RW,RS,D4,D5,D6,D7,BL,BLpol) 
-    LiquidCrystal_I2C lcd(0x3F, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);   // LiquidCrystal_I2C könyvtárat használjukDS3231 rtc(SDA, SCL); 
-    void setup() { 
-    rtc.begin(); // 
-    lcd.begin(16,2); //// 2 soros 16 karakteres LCD meghatározása 
-    } 
+##include <DS3231.h>
+#include <LiquidCrystal.h>
 
-    void loop() { 
-    lcd.setCursor(0,0); 
-    lcd.print("Time: "); 
-    lcd.print(rtc.getTimeStr()); 
-    lcd.setCursor(0,1); 
-    lcd.print("Date: "); 
-    lcd.print(rtc.getDateStr()); 
-    delay(1000); 
-    } 
+DS3231  rtc(SDA, SCL);
+LiquidCrystal lcd(1, 2, 4, 5, 6, 7);
+void setup() { 
+ rtc.begin();
+ lcd.begin(16,2);
+}
+void loop() { 
+ lcd.setCursor(0,0);
+ lcd.print("Time:  ");
+ lcd.print(rtc.getTimeStr());
+ 
+ lcd.setCursor(0,1);
+ lcd.print("Date: ");
+ lcd.print(rtc.getDateStr());
+ 
+ delay(1000); 
+}
 ```
 A második példában egy I2C kommunikációs két soros LCD kijelzőt fogok használni, hogy vizuálisan is megjelenítsem az időt és a dátumot. A alábbi kapcsolási rajzon is ez az ábra látható.
 
