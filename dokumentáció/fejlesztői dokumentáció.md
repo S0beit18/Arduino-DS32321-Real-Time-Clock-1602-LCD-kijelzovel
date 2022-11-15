@@ -112,21 +112,11 @@ A második példában egy I2C kommunikációs két soros LCD kijelzőt fogok has
 </details>
 
 ## Fellépő hibák a tervezés, tesztelés során:
-A tervezés közben egy olyan -számomra- hibát találtam, ami mellett nem tudtam dönteni. Mivel ezelőtt nem tanultam semmi ilyesmit, ezért persze internetes oldalakon, próbáltam kapcsolási rajzot összerakni. Sikerült is, kisebb nagyobb sikerrel. Csak 3 oldalon próbáltam és mindegyiken más-más sikerrel sikerült megcsinálni.
+A tervezés közben egy olyan -számomra- hibát találtam, ami mellett nem tudtam dönteni. Mivel ezelőtt nem tanultam semmi ilyesmit, ezért persze internetes oldalakon, próbáltam kapcsolási rajzot összerakni. Sikerült is, kisebb nagyobb sikerrel. Csak 2 oldalon próbáltam és mindegyiken más-más sikerrel sikerült megcsinálni.
 
 Az első példa azt mutatja be, hogy itt a kapcsolási rajz teljesen kész állapotban van, viszont nem tudom lefuttatni szimuláció céljából.
 <details>
-  <summary>Kapcsolási rajz szimulációs oldal nélkül</summary>
-    <p>
-      <picture>
-        <img alt="Kapcsolási rajz" src="https://user-images.githubusercontent.com/117828931/201672997-ee8c3753-b1f6-4421-ab91-1f7e56ebf1a3.png">
-      </picture>
-    </p>
-</details>
-
-A második példa is ugyan ezt mutatja be, csak itt már máshogy vannak kötve a modulok.
-<details>
-  <summary>Kapcsolási rajz szimulációs oldal nélkül, 2. kötés</summary>
+  <summary>Kapcsolási rajz oldal szimulációs rész nélkül</summary>
     <p>
       <picture>
         <img alt="Kapcsolási rajz" src="https://user-images.githubusercontent.com/117828931/201676388-f618406e-e969-4263-8880-d7b3b376548a.png">
@@ -134,12 +124,12 @@ A második példa is ugyan ezt mutatja be, csak itt már máshogy vannak kötve 
     </p>
 </details>
 
-A harmadik példa, pedig azt mutatja be, hogy az RTC modul híján teljes az ábra. Sajnos ezen az oldalon nem volt megtalálható az RTC modul, pedig ezt az oldalt találtam csak ahol le is lehet szimulálni a projekt működését.
+A második példa, pedig azt mutatja be, hogy az RTC modul híján teljes az ábra. Sajnos ezen az oldalon nem volt megtalálható az RTC modul, pedig ezt az oldalt találtam csak ahol le is lehet szimulálni a projekt működését.
 <details>
   <summary>Kapcsolási rajz szimulációs oldalon, RTC modul nélül</summary>
     <p>
       <picture>
-        <img alt="Kapcsolási rajz" src="https://user-images.githubusercontent.com/117828931/201677039-e017d4ae-7e63-4c52-b7ac-906de8f56edc.png">
+        <img alt="Kapcsolási rajz" src="https://user-images.githubusercontent.com/117828931/201980402-ea353a26-3f52-424f-9a11-afed00cd1db6.png">
       </picture>
     </p>
 </details>
