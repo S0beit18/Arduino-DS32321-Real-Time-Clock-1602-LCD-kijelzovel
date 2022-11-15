@@ -14,7 +14,7 @@ A feljebb mellékelt kapcsoloódási ábra alapján illesszük össze a moduloka
 
 ## Fizikai hibák
 - Készülék rosszul lett csatlakoztatva a számítógéphez.
-- 
+- Rosszul lett a kötés létrehozve, esetleg kicsúszott a csatlakozó
 
 ## Képek és videók a kész óráról:
 !!!!!!!!!!!!!!!!!!!!!!!!!
