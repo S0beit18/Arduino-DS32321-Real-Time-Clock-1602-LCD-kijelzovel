@@ -1,7 +1,12 @@
 # Arduino UNO vezérlésű digitális óra felhasználói dokumentációja.
 
+## Feladat
+Egy digitális óra programozása, és építése.
+
 ## Futási környezet
-!!!!!!!!!!!!!!!!!!!!!!!!!
+- [Arduino IDE 2.0.1]() futtatására alkalmas operációs rendszer
+  -  Windows 10
+  -  
 
 ## Működési vázlatok, programok
 !!!!!!!!!!!!!!!!!!!!!!!!!
