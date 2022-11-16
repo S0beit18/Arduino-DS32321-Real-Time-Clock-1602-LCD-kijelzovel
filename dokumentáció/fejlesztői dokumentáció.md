@@ -54,50 +54,155 @@ Kék színű háttérvilágítással rendelkezik, az I2C kommunikációnak kösz
 ## Az algoritmusok és a kódok:
 Demo kód:
 ```
-    void setup()
-    {
-    Serial.begin(115200); // Setup Serial connection
-    rtc.begin();
-    //A követkető 3 sort kikommentálva lehet az időt beállítani.
-    //rtc.setDOW(MONDAY);       //Nap beállítása
-    //rtc.setTime(12, 0, 0);    //Idő beállítása 12:00:00 (24 órás formátum)
-    //rtc.setDate(11, 14, 2022)  //Dátum beállítása 2022.11.14
+    #include <Wire.h>                   // for I2C communication
+#include <LiquidCrystal_I2C.h>      // for LCD
+#include <RTClib.h>                 // for RTC
+
+LiquidCrystal_I2C lcd(0x27, 16, 2); // create LCD with I2C address 0x27, 16 characters per line, 2 lines
+RTC_DS3231 rtc;                     // create rtc for the DS3231 RTC module, address is fixed at 0x68
+
+/*
+   function to update RTC time using user input
+*/
+void updateRTC()
+{
+  
+  lcd.clear();  // clear LCD display
+  lcd.setCursor(0, 0);
+  lcd.print("Szerkesztes...");
+
+  // ask user to enter new date and time
+  const char txt[6][15] = { "evet [szam]", "honapot [1~12]", "napot [1~31]",
+                            "orat [0~23]", "percet [0~59]", "mp-t [0~59]"};
+  String str = "";
+  long newDate[6];
+
+  while (Serial.available()) {
+    Serial.read();  // clear serial buffer
+  }
+
+  for (int i = 0; i < 6; i++) {
+
+    Serial.print("Kerek egy ");
+    Serial.print(txt[i]);
+    Serial.print(": ");
+
+    while (!Serial.available()) {
+      ; // wait for user input
     }
-          
-    void loop()
-    {
-    Serial.print(rtc.getDOWStr());    //Elküldi a hét napját
-    Serial.print(" ");
-    Serial.print(rtc.getDateStr());   //Elküldi a dátumot
-    Serial.print(" -- ");
-    Serial.println(rtc.getTimeStr()); //Elküldi az időt
-    delay (1000);                     //Vár 1 másodpercet az ismétlés előtt
+
+    str = Serial.readString();  // read user input
+    newDate[i] = str.toInt();   // convert user input to number and save to array
+
+    Serial.println(newDate[i]); // show user input
+  }
+
+  // update RTC
+  rtc.adjust(DateTime(newDate[0], newDate[1], newDate[2], newDate[3], newDate[4], newDate[5]));
+  Serial.println("RTC Frissitve!");
+}
+
+/*
+   function to update LCD text
+*/
+void updateLCD()
+{
+
+  /*
+     create array to convert digit days to words:
+
+     0 = Sunday   |   4 = Thursday
+     1 = Monday    |   5 = Friday
+     2 = Tuesday   |   6 = Saturday
+     3 = Wednesday |
+  */
+  const char dayInWords[7][4] = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"};
+
+  /*
+     create array to convert digit months to words:
+
+     0 = [no use]  |
+     1 = January   |   6 = June
+     2 = February  |   7 = July
+     3 = March     |   8 = August
+     4 = April     |   9 = September
+     5 = May       |   10 = October
+     6 = June      |   11 = November
+     7 = July      |   12 = December
+  */
+  const char monthInWords[13][4] = {" ", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", 
+                                         "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"};
+
+  // get time and date from RTC and save in variables
+  DateTime rtcTime = rtc.now();
+
+  int ss = rtcTime.second();
+  int mm = rtcTime.minute();
+  int hh = rtcTime.twelveHour();
+  int DD = rtcTime.dayOfTheWeek();
+  int dd = rtcTime.day();
+  int MM = rtcTime.month();
+  int yyyy = rtcTime.year();
+
+  // move LCD cursor to upper-left position
+  lcd.setCursor(0, 0);
+
+  // print date in dd-MMM-yyyy format and day of week
+  if (dd < 10) lcd.print("0");  // add preceeding '0' if number is less than 10
+  lcd.print(dd);
+  lcd.print("-");
+  lcd.print(monthInWords[MM]);
+  lcd.print("-");
+  lcd.print(yyyy);
+
+  lcd.print("  ");
+  lcd.print(dayInWords[DD]);
+
+  // move LCD cursor to lower-left position
+  lcd.setCursor(0, 1);
+
+  // print time in 12H format
+  if (hh < 10) lcd.print("0");
+  lcd.print(hh);
+  lcd.print(':');
+
+  if (mm < 10) lcd.print("0");
+  lcd.print(mm);
+  lcd.print(':');
+
+  if (ss < 10) lcd.print("0");
+  lcd.print(ss);
+
+  if (rtcTime.isPM()) lcd.print(" PM"); // print AM/PM indication
+  else lcd.print(" AM");
+}
+
+void setup()
+{
+  Serial.begin(9600); // initialize serial
+
+  lcd.init();       // initialize lcd
+  lcd.backlight();  // switch-on lcd backlight
+
+  rtc.begin();       // initialize rtc
+}
+
+void loop()
+{
+  updateLCD();  // update LCD text
+
+  if (Serial.available()) {
+    char input = Serial.read();
+    if (input == 'u') updateRTC();  // update RTC time
+  }
+}
 ```
 Ha megnézzük a loop szekciót a mintakódban akkor látható hogy 3 különböző függvényt használok, hogy információt kapjunk az RTC modultól, majd ezeket az információkat írjuk ki a Serial Monitorra. A képen látható az illusztráció:
 KELL KÉP!!!!!!
 
 Mintakód:
 ```
-##include <DS3231.h>
-#include <LiquidCrystal.h>
 
-DS3231  rtc(SDA, SCL);
-LiquidCrystal lcd(1, 2, 4, 5, 6, 7);
-void setup() { 
- rtc.begin();
- lcd.begin(16,2);
-}
-void loop() { 
- lcd.setCursor(0,0);
- lcd.print("Time:  ");
- lcd.print(rtc.getTimeStr());
- 
- lcd.setCursor(0,1);
- lcd.print("Date: ");
- lcd.print(rtc.getDateStr());
- 
- delay(1000); 
-}
 ```
 A második példában egy I2C kommunikációs két soros LCD kijelzőt fogok használni, hogy vizuálisan is megjelenítsem az időt és a dátumot. A alábbi kapcsolási rajzon is ez az ábra látható.
 
