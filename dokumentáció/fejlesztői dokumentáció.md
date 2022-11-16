@@ -28,7 +28,7 @@ Periféria követelmények:
 - Monitor
 
 ## A fejlesztői környezet
-Az Arduino Uno felprogramozásához az Arduino IDE 2.0.1 nevű programozási környezetet használtam, mely C++ alapokon nyugszik. A program futtatásához a minimum követelmény a Windows 7-es operációs rendszer, én Windows 10-et használtam a project készítése folyamán.!
+Az Arduino Uno felprogramozásához az Arduino IDE 2.0.1 nevű programozási környezetet használtam, mely C++ alapokon nyugszik. Én Windows 10-et használtam a project készítése folyamán, hiszen ez volt a minumum specifikáció ehhez a programhoz.
 
 ## Felhasznált modulok
 - [Arduino UNO REV3 fejlesztői panel](https://www.hestore.hu/prod_10035528.html)
@@ -56,25 +56,33 @@ Ez az LCD képernyő 16 karaktert képes megjeleníteni két sorban (1602).
 Kék színű háttérvilágítással rendelkezik, az I2C kommunikációnak köszönhetően könnyedén
 (két adatvezeték segítségével) használható Arduino projekthez.
 
+<!--
 ### POM1615 LIN 10K B potenciométer
 - Ellenállás-100 kΩ	
 - Ellenállás lefolyás-Lineáris
 - Terhelhetőség-200 mW
 - Forgatási szög (mechanikus)-300 °
+-->
 
 ## Az algoritmusok és a kódok:
-Demo kód:
+
+# Könyvtárak:
 ```
-    #include <Wire.h>                   // for I2C communication
+#include <Wire.h>                   // for I2C communication
 #include <LiquidCrystal_I2C.h>      // for LCD
 #include <RTClib.h>                 // for RTC
 
 LiquidCrystal_I2C lcd(0x27, 16, 2); // create LCD with I2C address 0x27, 16 characters per line, 2 lines
 RTC_DS3231 rtc;                     // create rtc for the DS3231 RTC module, address is fixed at 0x68
+```
+# Egyedi funkciók:<br>
 
+updateRTC():
+```
 /*
    function to update RTC time using user input
 */
+
 void updateRTC()
 {
   
@@ -112,10 +120,10 @@ void updateRTC()
   rtc.adjust(DateTime(newDate[0], newDate[1], newDate[2], newDate[3], newDate[4], newDate[5]));
   Serial.println("RTC Frissitve!");
 }
+```
 
-/*
-   function to update LCD text
-*/
+updateLCD()
+```
 void updateLCD()
 {
 
@@ -187,7 +195,12 @@ void updateLCD()
   if (rtcTime.isPM()) lcd.print(" PM"); // print AM/PM indication
   else lcd.print(" AM");
 }
+```
 
+# Alapértelmezett funkciók:<br>
+
+setup()
+```
 void setup()
 {
   Serial.begin(9600); // initialize serial
@@ -197,7 +210,10 @@ void setup()
 
   rtc.begin();       // initialize rtc
 }
+```
 
+loop()
+```
 void loop()
 {
   updateLCD();  // update LCD text
@@ -208,16 +224,7 @@ void loop()
   }
 }
 ```
-Ha megnézzük a loop szekciót a mintakódban akkor látható hogy 3 különböző függvényt használok, hogy információt kapjunk az RTC modultól, majd ezeket az információkat írjuk ki a Serial Monitorra. A képen látható az illusztráció:
-KELL KÉP!!!!!!
 
-Mintakód:
-```
-
-```
-A második példában egy I2C kommunikációs két soros LCD kijelzőt fogok használni, hogy vizuálisan is megjelenítsem az időt és a dátumot. A alábbi kapcsolási rajzon is ez az ábra látható.
-
-          
 ## Kapcsolási rajz
 <details>
   <summary>Kapcsolási rajz</summary>
