@@ -11,7 +11,7 @@ Arduino vagy Raspberry Pi alapú mikroelektronikai rendszer létrehozása.
 - Jeles: a jó osztályzat elvárásait még ki kell egészíteni valamilyen plusz kommunikációs csatornával. Ez lehet pl.: tweet, facebook post, email notification, push üzenet a telefonon, stb. (csak a képzelet szabhat határokat)
 
 ## Tervezési fázis:
-Eleinte sokat gondolkozam, hogy mit is tudnék megvalósítani és nagyon nem jutott eszembe semmi. Rájöttem, hogy körül kell néznem a saját környezetemben, ahhoz, hogy legyen bármi elképzelésem arról, hogy mit is akarok megvalósítani. Itthon van egy digitális órám, ami ugyan ezen az elven működik. Bedugjuk a tápot, az óra kiírja az időt szép világosan, Ezzel csak az a baj, hogy ez az óra napokkal később már több mint nyolc perces sietéssel jár. Így esett a választásom erre a projektre, hiszen szeretnék egy használhatót a szobámba. Sikerült a szükséges modulokat is egy oldalról beszereznem, így jöval megkönnyítve és lerövidítve a projekt menetét.
+Eleinte sokat gondolkozam, hogy mit is tudnék megvalósítani és nagyon nem jutott eszembe semmi. Rájöttem, hogy körül kell néznem a saját környezetemben, ahhoz, hogy legyen bármi elképzelésem arról, hogy mit is akarok megvalósítani. Itthon van egy digitális órám, ami ugyan ezen az elven működik. Bedugjuk a tápot, az óra kiírja az időt szép világosan. Ezzel csak az a baj, hogy ez az óra napokkal később már több mint nyolc perces sietéssel jár. Így esett a választásom erre a projektre, hiszen szeretnék egy használhatót a szobámba. Sikerült a szükséges modulokat is egy oldalról beszereznem, így jöval megkönnyítve és lerövidítve a projekt menetét.
 
 ## Futási környezet
 [Arduino IDE 2.0.1](https://www.arduino.cc/en/software) futtatására alkalmas operációs rendszer:
@@ -28,7 +28,7 @@ Periféria követelmények:
 - Monitor
 
 ## A fejlesztői környezet
-Az Arduino Uno felprogramozásához az Arduino IDE 2.0.1 nevű programozási környezetet használtam, mely C++ alapokon nyugszik. Én Windows 10-et használtam a project készítése folyamán, hiszen ez volt a minumum specifikáció ehhez a programhoz.
+Az Arduino Uno felprogramozásához az Arduino IDE 2.0.1 nevű programozási környezetet használtam, mely C++ alapokon nyugszik. Én Windows 10-et használtam a projekt készítése folyamán, hiszen ez volt a minumum specifikáció ehhez a programhoz.
 
 ## Felhasznált modulok
 - [Arduino UNO REV3 fejlesztői panel](https://www.hestore.hu/prod_10035528.html)
@@ -66,7 +66,7 @@ Kék színű háttérvilágítással rendelkezik, az I2C kommunikációnak kösz
 
 ## Az algoritmusok és a kódok:
 
-# Könyvtárak:
+### Könyvtárak:
 ```
 #include <Wire.h>                   // for I2C communication
 #include <LiquidCrystal_I2C.h>      // for LCD
@@ -75,7 +75,7 @@ Kék színű háttérvilágítással rendelkezik, az I2C kommunikációnak kösz
 LiquidCrystal_I2C lcd(0x27, 16, 2); // create LCD with I2C address 0x27, 16 characters per line, 2 lines
 RTC_DS3231 rtc;                     // create rtc for the DS3231 RTC module, address is fixed at 0x68
 ```
-# Egyedi funkciók:<br>
+### Egyedi funkciók:<br>
 
 updateRTC():
 ```
@@ -122,7 +122,6 @@ void updateRTC()
 }
 ```
 Ez a funkció felelős azért, hogy a felhasználótól bekérje a dátumot és az időt, és frissítse az RTC belső óráját a felhasználó bemeneti adataival.<br>
-
 
 updateLCD()
 ```
@@ -200,7 +199,7 @@ void updateLCD()
 ```
 Ez a funkció frissíti az LCD-n megjelenő szöveget.<br>
 
-# Alapértelmezett funkciók:<br>
+### Alapértelmezett funkciók:<br>
 
 setup()
 ```
@@ -263,8 +262,10 @@ A második példa, pedig azt mutatja be, hogy az RTC modul híján teljes az áb
     </p>
 </details>
 
+Laza csatlakozás, könnyen szétcsúsznak az érintkezések, így nehéz megtalálni azt a pozíciót, amikor jól érintkezik.
+
 ## Működési vázlat, szimuláció online
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+A működési vázlatok nagy részét online raktam össze a [TinkerCad](https://www.tinkercad.com/dashboard) és a [circuito.io](https://www.circuito.io/app?components=512,11021) nevű weboldalakon. A legtöbb alkatrész megtalálható volt ezen a két oldalon. RTC modul híján sajnos nem tudtam online szimulálni.
 
 ## Fejlesztési lehetőségek:
 Mivel ez nem egy végleges verzió, így rengeteg tovább fejlesztési lehtőség rejlik ebben a projektben.
@@ -273,8 +274,39 @@ Ezek közül pár:
 - Óra vázának kialakítása
 - Óra/dátum átállítása gombokkal
 
-## Képek és videók az óráról:
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+## Képek az óráról:
+<details>
+  <summary>LCD kijelző kész állapotban:</summary>
+    <p>
+      <picture>
+        <img alt="Kész LCD" src="https://user-images.githubusercontent.com/117828931/202267228-7dbf3c9b-035e-4487-9119-dd0fb5da5544.jpg">
+      </picture>
+    </p>
+</details>
+<details>
+  <summary>A kapcsolás:</summary>
+    <p>
+      <picture>
+        <img alt="Kapcsolás" src="https://user-images.githubusercontent.com/117828931/202268186-87da775d-9d76-4acd-8850-5c8a8a9a8c8a.jpg">
+      </picture>
+    </p>
+</details>
+<details>
+  <summary>RTC modul:</summary>
+    <p>
+      <picture>
+        <img alt="RTC modul" src="https://user-images.githubusercontent.com/117828931/202268376-6a69c8c2-dabf-41ed-910d-21912dd2a0f8.jpg>">
+      </picture>
+    </p>
+</details>
+<details>
+  <summary>Arduino UNO:</summary>
+    <p>
+      <picture>
+        <img alt="Arduino UNO" src="https://user-images.githubusercontent.com/117828931/202268570-e8de7bfe-e6ac-4ac2-895b-1ab9fe0a10eb.jpg">
+      </picture>
+    </p>
+</details>
 
 ## Szerző:
 - Név: Játékos Ádám Csaba
