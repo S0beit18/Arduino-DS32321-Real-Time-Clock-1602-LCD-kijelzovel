@@ -121,6 +121,8 @@ void updateRTC()
   Serial.println("RTC Frissitve!");
 }
 ```
+Ez a funkció felelős azért, hogy a felhasználótól bekérje a dátumot és az időt, és frissítse az RTC belső óráját a felhasználó bemeneti adataival.<br>
+
 
 updateLCD()
 ```
@@ -196,6 +198,7 @@ void updateLCD()
   else lcd.print(" AM");
 }
 ```
+Ez a funkció frissíti az LCD-n megjelenő szöveget.<br>
 
 # Alapértelmezett funkciók:<br>
 
@@ -211,6 +214,7 @@ void setup()
   rtc.begin();       // initialize rtc
 }
 ```
+Az LCD-nél inicializálnunk kell az LCD objektumot, és be kell kapcsolnunk a kijelző háttérvilágítását.<br>
 
 loop()
 ```
@@ -224,13 +228,14 @@ void loop()
   }
 }
 ```
+Ha a felhasználó elküldi az „u” karaktert a soros monitoron keresztül, az azt jelenti, hogy módosítani akarja az rtc beállított időpontját és dátumát.<br>
 
 ## Kapcsolási rajz
 <details>
   <summary>Kapcsolási rajz</summary>
     <p>
       <picture>
-        <img alt="Kapcsolási rajz" src="https://user-images.githubusercontent.com/117828931/201667191-d593dcd2-0a1c-4f0d-ab35-1dba5b52b161.png">
+        <img alt="Kapcsolási rajz" src="https://user-images.githubusercontent.com/117828931/202259278-6b9f12c8-edec-47d6-a503-282f0e3bca15.png">
       </picture>
     </p>
 </details>
@@ -243,7 +248,7 @@ Az első példa azt mutatja be, hogy itt a kapcsolási rajz teljesen kész álla
   <summary>Kapcsolási rajz oldal szimulációs rész nélkül</summary>
     <p>
       <picture>
-        <img alt="Kapcsolási rajz" src="https://user-images.githubusercontent.com/117828931/201676388-f618406e-e969-4263-8880-d7b3b376548a.png">
+        <img alt="Kapcsolási rajz" src="https://user-images.githubusercontent.com/117828931/202259583-e4f8677c-a66e-4947-a551-249494d42d2b.png">
       </picture>
     </p>
 </details>
@@ -253,7 +258,7 @@ A második példa, pedig azt mutatja be, hogy az RTC modul híján teljes az áb
   <summary>Kapcsolási rajz szimulációs oldalon, RTC modul nélül</summary>
     <p>
       <picture>
-        <img alt="Kapcsolási rajz" src="https://user-images.githubusercontent.com/117828931/201980402-ea353a26-3f52-424f-9a11-afed00cd1db6.png">
+        <img alt="Kapcsolási rajz" src="https://user-images.githubusercontent.com/117828931/202262096-35b49ff5-c458-41c6-bc40-1a40c7039808.png">
       </picture>
     </p>
 </details>
