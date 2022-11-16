@@ -11,24 +11,35 @@ Arduino vagy Raspberry Pi alapú mikroelektronikai rendszer létrehozása.
 - Jeles: a jó osztályzat elvárásait még ki kell egészíteni valamilyen plusz kommunikációs csatornával. Ez lehet pl.: tweet, facebook post, email notification, push üzenet a telefonon, stb. (csak a képzelet szabhat határokat)
 
 ## Tervezési fázis:
-Eleinte sokat gondolkozam, hogy mit is tudnék megvalósítani és nagyon nem jutott eszembe semmi. Rájöttem, hogy körül kell néznem a saját környezetemben, ahhoz, hogy legyen bármi elképzelésem arról, hogy mit is akarok megvalósítani. Itthon van egy digitális órám, ami ugyan ezen az elven működik. Bedugjuk a tápot, az óra kiírja az időt szép világosan, Ezzel csak az a baj, hogy ez az óra napokkal később már több mint nyolc perces sietéssel jár, illetve, hogy a kijelző fényereje nem állítható. Így esett a választásom erre a projektre, hiszen szeretnék egy használhatót a szobámba. Sikerült a szükséges modulokat is egy oldalról beszereznem ,így jöval megkönnyítve és lerövidítve a projekt menetét.
+Eleinte sokat gondolkozam, hogy mit is tudnék megvalósítani és nagyon nem jutott eszembe semmi. Rájöttem, hogy körül kell néznem a saját környezetemben, ahhoz, hogy legyen bármi elképzelésem arról, hogy mit is akarok megvalósítani. Itthon van egy digitális órám, ami ugyan ezen az elven működik. Bedugjuk a tápot, az óra kiírja az időt szép világosan, Ezzel csak az a baj, hogy ez az óra napokkal később már több mint nyolc perces sietéssel jár. Így esett a választásom erre a projektre, hiszen szeretnék egy használhatót a szobámba. Sikerült a szükséges modulokat is egy oldalról beszereznem, így jöval megkönnyítve és lerövidítve a projekt menetét.
 
 ## Futási környezet
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+[Arduino IDE 2.0.1](https://www.arduino.cc/en/software) futtatására alkalmas operációs rendszer:
+1. Windows:
+    - Windows 10, vagy újabb
+2. Linux:
+    - AppImage 64 bits (X86-64)
+3. MacOS:
+    - 10.14: “Mojave” or newer, 64 bits
+
+Periféria követelmények:
+- Billentyűzet
+- Egér
+- Monitor
 
 ## A fejlesztői környezet
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Az Arduino Uno felprogramozásához az Arduino IDE 2.0.1 nevű programozási környezetet használtam, mely C++ alapokon nyugszik. A program futtatásához a minimum követelmény a Windows 7-es operációs rendszer, én Windows 10-et használtam a project készítése folyamán.!
 
 ## Felhasznált modulok
 - [Arduino UNO REV3 fejlesztői panel](https://www.hestore.hu/prod_10035528.html)
 - [DS3231 + AT24C32 I2C RTC valós idejű memória modul](https://www.hestore.hu/prod_10038042.html)
 - [CR2032 Gombelem](https://www.hestore.hu/prod_10042619.html)
 - [KC-1602-BB-I2C LCD kijelző](https://www.hestore.hu/prod_10042987.html)
-- [POM1615 LIN 10K B potenciométer](https://www.hestore.hu/prod_10027737.html)
 - [HS-005 próbapanel](https://www.hestore.hu/prod_10043091.html)
 - [RC-40-10/FF jumper kábel](https://www.hestore.hu/prod_10036627.html)
 - [RC-40-10/MF jumper kábel](https://www.hestore.hu/prod_10036628.html)
-- [RC-40-10/MM jumper kábel](https://www.hestore.hu/prod_10036629.html)
+<!--- [RC-40-10/MM jumper kábel](https://www.hestore.hu/prod_10036629.html)-->
+<!--- [POM1615 LIN 10K B potenciométer](https://www.hestore.hu/prod_10027737.html)-->
 
 ## A fontosabb modulok leírása
 ### DS3231 RTC
