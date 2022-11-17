@@ -38,12 +38,10 @@ Az Arduino Uno felprogramozásához az Arduino IDE 2.0.1 nevű programozási kö
 - [HS-005 próbapanel](https://www.hestore.hu/prod_10043091.html)
 - [RC-40-10/FF jumper kábel](https://www.hestore.hu/prod_10036627.html)
 - [RC-40-10/MF jumper kábel](https://www.hestore.hu/prod_10036628.html)
-<!--- [RC-40-10/MM jumper kábel](https://www.hestore.hu/prod_10036629.html)-->
-<!--- [POM1615 LIN 10K B potenciométer](https://www.hestore.hu/prod_10027737.html)-->
 
 ## A fontosabb modulok leírása
 ### DS3231 RTC
-A modul egy valós idejű óra ( Real time clock vagy másképp RTC modul), amely képes kezelni órát, percet és másodpercet rendkívül nagy pontossággal. Ugyancsak képes kezelni a napokat hónapokat éveket. A pontosságért a DS3231 típusú chip felell, míg az adattárolásért AT24C32, amely 32kBit nagyságú.
+A modul egy valós idejű óra (Real time clock vagy másképp RTC modul), amely képes kezelni órát, percet és másodpercet rendkívül nagy pontossággal. Ugyancsak képes kezelni a napokat hónapokat éveket. A pontosságért a DS3231 típusú chip felel, míg az adattárolásért AT24C32, amely 32kBit nagyságú.
 
 Az óra pontossága +/- 2ppm (0-50°C). Ez annyit jelent, hogy szélsőséges esetekben 1.2 másodperc lehet a késés havonta. Normál kvarckristályos órák esetén ez 30 másodperc is lehet.
 
@@ -55,14 +53,6 @@ A modul az I2C kommunikációs protokollt használja, amely megkönnyíti az ös
 Ez az LCD képernyő 16 karaktert képes megjeleníteni két sorban (1602).
 Kék színű háttérvilágítással rendelkezik, az I2C kommunikációnak köszönhetően könnyedén
 (két adatvezeték segítségével) használható Arduino projekthez.
-
-<!--
-### POM1615 LIN 10K B potenciométer
-- Ellenállás-100 kΩ	
-- Ellenállás lefolyás-Lineáris
-- Terhelhetőség-200 mW
-- Forgatási szög (mechanikus)-300 °
--->
 
 ## Az algoritmusok és a kódok:
 
