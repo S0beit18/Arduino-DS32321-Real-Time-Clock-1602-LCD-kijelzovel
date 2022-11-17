@@ -295,7 +295,7 @@ Ezek közül pár:
   <summary>RTC modul:</summary>
     <p>
       <picture>
-        <img alt="RTC modul" src="https://user-images.githubusercontent.com/117828931/202268376-6a69c8c2-dabf-41ed-910d-21912dd2a0f8.jpg>">
+        <img alt="RTC modul" src="https://user-images.githubusercontent.com/117828931/202268376-6a69c8c2-dabf-41ed-910d-21912dd2a0f8.jpg>
       </picture>
     </p>
 </details>
