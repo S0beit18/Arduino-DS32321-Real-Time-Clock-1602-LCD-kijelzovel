@@ -181,7 +181,38 @@ A Sertial Monitor-on lévő mezőbe írjunk egy "u" karaktert. Ezután a program
 - Rosszul lett a kötés létrehozve, esetleg kicsúszott a csatlakozó
 
 ## Képek és videók a kész óráról:
-!!!!!!!!!!!!!!!!!!!!!!!!!
+<details>
+  <summary>LCD kijelző kész állapotban:</summary>
+    <p>
+      <picture>
+        <img alt="Kész LCD" src="https://user-images.githubusercontent.com/117828931/202267228-7dbf3c9b-035e-4487-9119-dd0fb5da5544.jpg">
+      </picture>
+    </p>
+</details>
+<details>
+  <summary>A kapcsolás:</summary>
+    <p>
+      <picture>
+        <img alt="Kapcsolás" src="https://user-images.githubusercontent.com/117828931/202268186-87da775d-9d76-4acd-8850-5c8a8a9a8c8a.jpg">
+      </picture>
+    </p>
+</details>
+<details>
+  <summary>RTC modul:</summary>
+    <p>
+      <picture>
+        <img alt="RTC modul" src="https://user-images.githubusercontent.com/117828931/202268376-6a69c8c2-dabf-41ed-910d-21912dd2a0f8.jpg">
+      </picture>
+    </p>
+</details>
+<details>
+  <summary>Arduino UNO:</summary>
+    <p>
+      <picture>
+        <img alt="Arduino UNO" src="https://user-images.githubusercontent.com/117828931/202268570-e8de7bfe-e6ac-4ac2-895b-1ab9fe0a10eb.jpg">
+      </picture>
+    </p>
+</details>
 
 ## Szerző
 - Név: Játékos Ádám Csaba
