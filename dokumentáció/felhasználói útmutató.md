@@ -174,11 +174,12 @@ void loop()
 A feljebb mellékelt kapcsoloódási ábra alapján illesszük össze a modulokat. Letöltjük az [Arduino IDE 2.0.1](https://www.arduino.cc/en/software)-t. Bedugjuk az eszközbe. Ha az Arduino UNO-n lévő "ON" lámpa, az RTC modulon a "POWER" lámpa és az LCD kijelző világít, akkor helyesen kötöttük össze, jók az érintkezések, áram alatt van a készülék. A kódot illesszük be a programba, majd a Serial Monitor ablakot használjuk
 
 ## Használat
-A Sertial Monitor-on lévő mezőbe írjunk egy "u" karaktert. Ezután a program kéri, hogy írjuk be a évet, a hónapot, a napot, az órát, a percet és a másodpercet.
+A Sertial Monitor-on lévő mezőbe írjunk egy "u" karaktert. Ezután a program kéri, hogy írjuk be az évet, a hónapot, a napot, az órát, a percet és a másodpercet.
 
 ## Fizikai hibák
 - Készülék rosszul lett csatlakoztatva a számítógéphez.
-- Rosszul lett a kötés létrehozve, esetleg kicsúszott a csatlakozó
+- Rosszul lett a kötés létrehozva.
+- Kicsúszott a kábel a nyákból
 
 ## Képek és videók a kész óráról:
 <details>
