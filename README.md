@@ -9,6 +9,8 @@ Az itt látható dokumentumok segítségével otthon is egyszerűen létrehozhat
 
 Ha valakit érdekel a többi része is, akkor azt meg lehet találni a "fejlesztői dokumentáció"-ban.
 
+Később tudtam meg, hogy PDF-ként kell feltölteni a dokumentációt, miután elkészült a .md dokumnetáció, ezért csak kimásoltam onnan. Nem töröltem ki a .md fájlokat, hiszen így látszódik minden commit.
+
 ### Szerző
 - Név: Játékos Ádám Csaba
 - Neptun-kód: DLHKIJ
